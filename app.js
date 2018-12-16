@@ -3,6 +3,8 @@ function buildMetadata(sample) {
   // @TODO: Complete the following function that builds the metadata panel
   // Use `Object.entries` to add each key and value pair to the panel
   //  loading the data by using object .entries
+  // Use `.html("") to clear any existing metadata
+   // PANEL.innerHTML = '';
    d3.json(`/metadata/${sample}`).then((Smedata) => {
      console.log(Smedata);
     
@@ -20,8 +22,10 @@ function buildMetadata(sample) {
   
   // Pie chart for top 10 values 
   // Create a PIE chart that uses data from your samples route (/samples/<sample>) to display the top 10 samples.
-  function  Piechart(sample) {
-  //     //Gets data ready for the pie chart
+  
+  // HINT: You will need to use slice() to grab the top 10 sample_values,
+  // otu_ids, and labels (10 each).function  Piechart(sample) {
+  //Gets data ready for the pie chart
      d3.json(`/samples/${sample}`).then((Piedata) =>
      {
        console.log("Piedata")
@@ -38,7 +42,7 @@ function buildMetadata(sample) {
        console.log(Piedata.otu_labels);
        console.log(Piedata.sample_values);
       
-       // function runnin
+       // function running
        const otu_ids = Piedata.otu_ids;
        const otu_labels = Piedata.otu_labels;
        const sample_values = Piedata.sample_values;
@@ -100,44 +104,18 @@ function buildMetadata(sample) {
             
 
           }
-
-        
-
-
-
+    
         }];
-        Plotly.newPlot("bubble", Bdata, bubbleLayout);
+        Plotly.newPlot("Bubble Plot for Belly Button Bacteria", Bdata, bubbleLayout);
+
+        // use the same variab;es we defined
+        // use .slice(0,10)
       });
     }
 
-
-
-
-      
+     // \calling init function by using .D3 for each /appending sample valuesw
+     // function init
   
-  
-   // @TODO: Complete the following function that builds the metadata panel
-   // var PANEL = d3.select("#sample-metadata")
-   // Use `d3.json` to fetch the metadata for a sample
-     // Use d3 to select the panel with id of `#sample-metadata`
-  
-     // Use `.html("") to clear any existing metadata
-   // PANEL.innerHTML = '';
-     // Use `Object.entries` to add each key and value pair to the panel
-  // }
-     // Hint: Inside the loop, you will need to use d3 to append new
-     // tags for each key-value in the metadata.
-  
-     // BONUS: Build the Gauge Chart
-     // buildGauge(data.WFREQ);
-  
-  
-  
-  
-  
-     // HINT: You will need to use slice() to grab the top 10 sample_values,
-     // otu_ids, and labels (10 each).
-  // }
   
   function init() {
   

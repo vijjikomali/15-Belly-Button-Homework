@@ -1,0 +1,1 @@
+web:gununicorn bellyvijji15:app
