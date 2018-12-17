@@ -1,1 +1,1 @@
-web:gununicorn bellyvijji15:app
+web: gunicorn app:app
