@@ -89,8 +89,8 @@ def samples(sample):
     # Filter the data based on the sample number and
     # only keep rows with values above 1
     # sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
-    df = df.sort_values(by=sample, ascending = 1)  
-    sample_data = df.loc[df[sample] > 0, ["otu_id", "otu_label", sample]]
+    df = df.sort_values(by=sample, ascending = 0)  
+    sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
     print (sample_data)
 
 
@@ -105,4 +105,4 @@ def samples(sample):
 
 
 if __name__ == "__main__":
-    app.run(port=5002)
+    app.run(port=5003)

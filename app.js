@@ -1,3 +1,4 @@
+
 function buildMetadata(sample) {
   
   // @TODO: Complete the following function that builds the metadata panel
@@ -26,6 +27,7 @@ function buildMetadata(sample) {
   // HINT: You will need to use slice() to grab the top 10 sample_values,
   // otu_ids, and labels (10 each).function  Piechart(sample) {
   //Gets data ready for the pie chart
+  function Piechart(sample){
      d3.json(`/samples/${sample}`).then((Piedata) =>
      {
        console.log("Piedata")
@@ -64,8 +66,8 @@ function buildMetadata(sample) {
            Plotly.newPlot("pie", data, layout);
        
      });
+    
     }
-    // }
          
    
   // // Bubble plot
@@ -106,7 +108,7 @@ function buildMetadata(sample) {
           }
     
         }];
-        Plotly.newPlot("Bubble Plot for Belly Button Bacteria", Bdata, bubbleLayout);
+        Plotly.newPlot("bubble", Bdata, bubbleLayout);
 
         // use the same variab;es we defined
         // use .slice(0,10)
@@ -150,6 +152,8 @@ function buildMetadata(sample) {
    console.log("option changed")
    // Fetch new data each time a new sample is selected
 
+
+
   //  buildCharts(newSample);
   buildMetadata(newSample);
   Piechart(newSample);
@@ -159,3 +163,5 @@ function buildMetadata(sample) {
   
   // Initialize the dashboard
   init();
+
+  
